@@ -50,9 +50,10 @@ with open(budget_filepath) as dataset:
 
     #for row in range(len(net_total)-1):
         previous_total = int(row[1])
-    
-print(total_number_of_months)
-print(net_total)
-print(deltas/(len(test)-1))
-print("{} {}".format(high_month, high_swing))
-print("{} {}".format(low_month, low_swing))
+print("Financial Analysis")  
+print("------------------")
+print("Total Months",total_number_of_months)
+print("Total:",net_total)
+print("Average Change",deltas/(len(test)-1,{:.2f}))
+print("Greatest Increase In Profits","{} ({})".format(high_month, high_swing))
+print("Greatest Decrease In Profits","{} ({})".format(low_month, low_swing))

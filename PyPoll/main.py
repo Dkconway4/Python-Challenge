@@ -22,6 +22,9 @@ with open(election_filepath) as dataset:
             thisdict[current_name]+=1
         else:
             thisdict[current_name]=1
+print("Election Results")
+print("------------------")
+print("Total Votes",total_votes)
 
 for name,number in thisdict.items():
     if not winner:
@@ -30,5 +33,7 @@ for name,number in thisdict.items():
         if number > thisdict[winner]:
             winner = name
     print("{}: {:.3f}% ({})".format(name,number/total_votes*100,number))
+print("------------------")
 #print(thisdict)
-print(winner)
+print("Winner",winner)
+print("------------------")
