@@ -22,9 +22,10 @@ with open(election_filepath) as dataset:
             thisdict[current_name]+=1
         else:
             thisdict[current_name]=1
-print("Election Results")
-print("------------------")
-print("Total Votes",total_votes)
+output = open("analysis/PyPollText.txt","w")
+output.write("Election Results\n")
+output.write("------------------\n")
+output.write("Total Votes {}\n".format(total_votes))
 
 for name,number in thisdict.items():
     if not winner:
@@ -32,8 +33,7 @@ for name,number in thisdict.items():
     else:
         if number > thisdict[winner]:
             winner = name
-    print("{}: {:.3f}% ({})".format(name,number/total_votes*100,number))
-print("------------------")
-#print(thisdict)
-print("Winner",winner)
-print("------------------")
+    output.write("{}: {:.3f}% ({})\n".format(name,number/total_votes*100,number))
+output.write("------------------\n")
+output.write("Winner {}\n".format(winner))
+output.write("------------------\n")
